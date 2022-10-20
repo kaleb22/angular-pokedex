@@ -12,6 +12,8 @@ export class PokemonCardComponent implements OnInit {
   @Input() entryNumber: number;
   @Input() name: string;
 
+  bgGreen = '#70A83B';
+
   ngOnInit(): void {
   }
 
@@ -29,6 +31,10 @@ export class PokemonCardComponent implements OnInit {
     }
 
     return `#${this.entryNumber}`;
+  }
+
+  getClassFromPokemonType(pokemonType: string) {
+    return this.bgGreen;
   }
 
 }

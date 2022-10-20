@@ -1,9 +1,11 @@
-<div class="poke-card">
-  <div class="poke-card__header">
-    <p>{{ name }}</p>
-    <p>{{ getEntryNumberFormated() }}</p>
-  </div>
-  <div class="poke-card__img">
-    <img [src]="getPokemonImage()" width="130" height="130">
+<div class="poke-card" [ngStyle]="{'background': bgGreen}">
+  <div class="poke-card__bg-img">
+    <div class="poke-card__header">
+      <p>{{ name }}</p>
+      <p>{{ getEntryNumberFormated() }}</p>
+    </div>
+    <div class="poke-card__img">
+      <img [src]="getPokemonImage()" width="130" height="130">
+    </div>
   </div>
 </div>
