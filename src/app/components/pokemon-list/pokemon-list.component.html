@@ -1,1 +1,6 @@
-<p>pokemon-list works!</p>
+<div *ngIf="pokemonList" class="poke-list">
+  <app-pokemon-card
+    [entryNumber]="pokemonList[0].entry_number"
+    [name]="pokemonList[0].pokemon_species.name"
+  ></app-pokemon-card>
+</div>

@@ -11,7 +11,6 @@ export class HomeComponent {
   constructor(private router: Router) { }
 
   navigateToPokemonList() {
-    console.log('cliquei');
     this.router.navigateByUrl('/listPokemons');
   }
 

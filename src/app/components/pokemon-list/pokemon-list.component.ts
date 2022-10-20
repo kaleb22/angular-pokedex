@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { GameClient, Pokedex, PokemonEntry } from 'pokenode-ts';
 
 @Component({
   selector: 'app-pokemon-list',
@@ -9,7 +10,25 @@ export class PokemonListComponent implements OnInit {
 
   constructor() { }
 
+  POKEMON_KANTO_ID = 2;
+  pokemonList: PokemonEntry[];
+
   ngOnInit(): void {
+    this.requestPokemonList();
   }
 
+  async requestPokemonList() {
+    const apiGameClient = new GameClient({
+      cacheOptions: { maxAge: 500000, exclude: { query: false }}
+    });
+
+    let pokeResponse = await apiGameClient
+        .getPokedexById(this.POKEMON_KANTO_ID)
+        .then( response => {
+           return ( response.pokemon_entries as PokemonEntry[] )
+        })
+        .catch(error => console.error(error));
+
+    this.pokemonList = pokeResponse as PokemonEntry[];
+  }
 }
