@@ -27,3 +27,20 @@
     justify-content: center;
   }
 }
+
+.grow {
+  transition: 1s ease;
+}
+  
+.grow:hover {
+  transform: scale(1.1);
+  transition: 1s ease;
+}
+
+.grow:active {
+  background-color: #8c8c8c !important;
+  background-size: 100% !important;
+  transition: background 0s;
+  opacity: 0.9;
+}
+  

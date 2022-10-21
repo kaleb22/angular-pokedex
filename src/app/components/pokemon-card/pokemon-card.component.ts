@@ -37,4 +37,8 @@ export class PokemonCardComponent implements OnInit {
     return this.bgGreen;
   }
 
+  goToPokemonDetails() {
+    console.log('cliquei');
+  }
+
 }
