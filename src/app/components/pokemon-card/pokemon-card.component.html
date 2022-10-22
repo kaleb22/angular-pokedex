@@ -1,0 +1,11 @@
+<div class="poke-card grow" (click)="goToPokemonDetails()" [ngStyle]="{'background': bgGColor}">
+  <div class="poke-card__bg-img">
+    <div class="poke-card__header">
+      <p>{{ name }}</p>
+      <p>{{ entryNumber | fullEntryNumber }}</p>
+    </div>
+    <div class="poke-card__img">
+      <img [src]="getPokemonImage()" width="130" height="130">
+    </div>
+  </div>
+</div>

@@ -3,3 +3,17 @@ html, body {
   margin: 0px;
   font-family: 'Maven Pro';
 }
+
+/* Ripple effect */
+.ripple {
+  background-position: center;
+  transition: background 0.8s;
+}
+.ripple:hover {
+  background: #23295b radial-gradient(circle, transparent 1%, #393279 1%) center/15000%;
+}
+.ripple:active {
+  background-color: #23295b;
+  background-size: 100%;
+  transition: background 0s;
+}
