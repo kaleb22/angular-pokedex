@@ -1,10 +1,12 @@
 <div *ngIf="pokemonList">
-  <div *ngFor="let pokemon of pokemonList; let i = index" class="poke-list">
-    <div *ngIf="i < pokemonListToShow || showMorePokemon">
-      <app-pokemon-card
-        [entryNumber]="pokemon.entry_number"
-        [name]="pokemon.pokemon_species.name"
-      ></app-pokemon-card>
+  <div class="poke-list">
+    <div *ngFor="let pokemon of pokemonList; let i = index">
+      <div *ngIf="i < pokemonListToShow || showMorePokemon">
+        <app-pokemon-card
+          [entryNumber]="pokemon.entry_number"
+          [name]="pokemon.pokemon_species.name"
+        ></app-pokemon-card>
+      </div>
     </div>
   </div>
   <div class="container" *ngIf="pokemonListToShow <= pokemonList.length">
