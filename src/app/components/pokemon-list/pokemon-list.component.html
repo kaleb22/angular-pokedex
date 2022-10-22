@@ -1,4 +1,4 @@
-<div *ngIf="pokemonList">
+<div *ngIf="pokemonList" class="poke-list">
   <div *ngFor="let pokemon of pokemonList">
     <app-pokemon-card
       [entryNumber]="pokemon.entry_number"
