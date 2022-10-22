@@ -6,13 +6,15 @@ import { AppRoutingModule } from './app-routing.module';
 import { PokemonListComponent } from './components/pokemon-list/pokemon-list.component';
 import { HomeComponent } from './components/home/home.component';
 import { PokemonCardComponent } from './components/pokemon-card/pokemon-card.component';
+import { FullEntryNumberPipe } from './pipes/full-entry-number.pipe';
 
 @NgModule({
   declarations: [
     AppComponent,
     PokemonListComponent,
     HomeComponent,
-    PokemonCardComponent
+    PokemonCardComponent,
+    FullEntryNumberPipe
   ],
   imports: [
     BrowserModule,

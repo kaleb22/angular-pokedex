@@ -23,18 +23,6 @@ export class PokemonCardComponent implements OnInit {
     return `https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/dream-world/${this.entryNumber}.svg`
   }
 
-  getEntryNumberFormated() {
-    if(this.entryNumber >= 0 && this.entryNumber <= 9) {
-      return `#00${this.entryNumber}`;
-    }
-
-    if(this.entryNumber >= 10 && this.entryNumber <= 99) {
-      return `#0${this.entryNumber}`;
-    }
-
-    return `#${this.entryNumber}`;
-  }
-
   goToPokemonDetails() {
     console.log('cliquei');
   }

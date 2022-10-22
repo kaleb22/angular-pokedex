@@ -2,7 +2,7 @@
   <div class="poke-card__bg-img">
     <div class="poke-card__header">
       <p>{{ name }}</p>
-      <p>{{ getEntryNumberFormated() }}</p>
+      <p>{{ entryNumber | fullEntryNumber }}</p>
     </div>
     <div class="poke-card__img">
       <img [src]="getPokemonImage()" width="130" height="130">
