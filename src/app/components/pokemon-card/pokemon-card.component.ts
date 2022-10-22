@@ -1,4 +1,5 @@
 import { Component, Input, OnInit } from '@angular/core';
+import { PokemonTypeService } from 'src/app/services/pokemon-type.service';
 
 @Component({
   selector: 'app-pokemon-card',
@@ -7,14 +8,15 @@ import { Component, Input, OnInit } from '@angular/core';
 })
 export class PokemonCardComponent implements OnInit {
 
-  constructor() { }
+  constructor(private pokemonTypeService: PokemonTypeService) { }
 
   @Input() entryNumber: number;
   @Input() name: string;
 
-  bgGreen = '#70A83B';
+  bgGColor = '';
 
   ngOnInit(): void {
+    this.bgGColor = this.pokemonTypeService.getBackgroundColorByIndex(this.entryNumber);
   }
 
   getPokemonImage(): string {
@@ -31,10 +33,6 @@ export class PokemonCardComponent implements OnInit {
     }
 
     return `#${this.entryNumber}`;
-  }
-
-  getClassFromPokemonType(pokemonType: string) {
-    return this.bgGreen;
   }
 
   goToPokemonDetails() {

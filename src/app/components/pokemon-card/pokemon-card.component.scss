@@ -1,11 +1,8 @@
 .poke-card {
   width: 320px;
   height: 294px;
-  //background: #70A83B;
   border-radius: 10px;
-  display: flex;
-  flex-direction: column;
-  gap: 10px;
+  margin: 20px;
 
   &__bg-img {
     background-image: url('/assets/img/pokeball.svg');
