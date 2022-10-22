@@ -28,7 +28,7 @@ export class PokemonCardComponent implements OnInit {
       return `#00${this.entryNumber}`;
     }
 
-    if(this.entryNumber >= 10 || this.entryNumber <= 99) {
+    if(this.entryNumber >= 10 && this.entryNumber <= 99) {
       return `#0${this.entryNumber}`;
     }
 
