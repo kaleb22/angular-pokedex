@@ -1,8 +1,14 @@
 <div *ngIf="pokemonList" class="poke-list">
-  <div *ngFor="let pokemon of pokemonList">
-    <app-pokemon-card
-      [entryNumber]="pokemon.entry_number"
-      [name]="pokemon.pokemon_species.name"
-    ></app-pokemon-card>
+  <div *ngFor="let pokemon of pokemonList; let i = index">
+    <div *ngIf="i < pokemonListToShow || showMorePokemon">
+      <app-pokemon-card
+        [entryNumber]="pokemon.entry_number"
+        [name]="pokemon.pokemon_species.name"
+      ></app-pokemon-card>
+    </div>
   </div>
+</div>
+
+<div class="container">
+  <button (click)="loadMorePokemon()" class="container__btn ripple"> Show More </button>
 </div>

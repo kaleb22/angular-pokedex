@@ -98,17 +98,3 @@
   60% { transform: translate(10px, 0) rotate(10deg); }
   100% { transform: translate(0, 0) rotate(0); }
 }
-
-/* Ripple effect */
-.ripple {
-  background-position: center;
-  transition: background 0.8s;
-}
-.ripple:hover {
-  background: #23295b radial-gradient(circle, transparent 1%, #393279 1%) center/15000%;
-}
-.ripple:active {
-  background-color: #23295b;
-  background-size: 100%;
-  transition: background 0s;
-}
