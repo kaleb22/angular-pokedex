@@ -24,10 +24,6 @@ export class PokemonCardComponent implements OnInit {
     this.bgGColor = this.pokemonTypeService.getBackgroundColorByIndex(this.entryNumber);
   }
 
-  getPokemonImage(): string {
-    return `https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/dream-world/${this.entryNumber}.svg`
-  }
-
   goToPokemonDetails() {
     this.router.navigate(['/pokemonDetails'], { queryParams: { entryNumber: this.entryNumber }});
   }
