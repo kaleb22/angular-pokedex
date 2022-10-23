@@ -25,7 +25,15 @@ export class PokemonCardComponent implements OnInit {
   }
 
   goToPokemonDetails() {
-    this.router.navigate(['/pokemonDetails'], { queryParams: { entryNumber: this.entryNumber }});
+    this.router.navigate(
+      ['/pokemonDetails'],
+      {
+        queryParams: {
+          entryNumber: this.entryNumber,
+          name: this.name
+        }
+      }
+    );
   }
 
 }
