@@ -7,6 +7,7 @@ import { PokemonListComponent } from './components/pokemon-list/pokemon-list.com
 import { HomeComponent } from './components/home/home.component';
 import { PokemonCardComponent } from './components/pokemon-card/pokemon-card.component';
 import { FullEntryNumberPipe } from './pipes/full-entry-number.pipe';
+import { PokemonDetailsComponent } from './components/pokemon-details/pokemon-details.component';
 
 @NgModule({
   declarations: [
@@ -14,7 +15,8 @@ import { FullEntryNumberPipe } from './pipes/full-entry-number.pipe';
     PokemonListComponent,
     HomeComponent,
     PokemonCardComponent,
-    FullEntryNumberPipe
+    FullEntryNumberPipe,
+    PokemonDetailsComponent
   ],
   imports: [
     BrowserModule,

@@ -1,4 +1,5 @@
 import { Component, Input, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 import { PokemonTypeService } from 'src/app/services/pokemon-type.service';
 
 @Component({
@@ -8,7 +9,11 @@ import { PokemonTypeService } from 'src/app/services/pokemon-type.service';
 })
 export class PokemonCardComponent implements OnInit {
 
-  constructor(private pokemonTypeService: PokemonTypeService) { }
+  constructor(
+    private pokemonTypeService: PokemonTypeService,
+    private router: Router
+
+  ) { }
 
   @Input() entryNumber: number;
   @Input() name: string;
@@ -24,7 +29,7 @@ export class PokemonCardComponent implements OnInit {
   }
 
   goToPokemonDetails() {
-    console.log('cliquei');
+    this.router.navigate(['/pokemonDetails'], { queryParams: { entryNumber: this.entryNumber }});
   }
 
 }
