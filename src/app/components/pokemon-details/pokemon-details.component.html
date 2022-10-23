@@ -1,4 +1,4 @@
-<div class="pokemon-details" [ngStyle]="{'background': bgColor}">
+<div *ngIf="requestFinished" class="pokemon-details" [ngStyle]="{'background': bgColor}">
   <div class="pokemon-details__bg-img">
     <p>{{ name }}</p>
     <p>{{ entryNumber | fullEntryNumber }}</p>
