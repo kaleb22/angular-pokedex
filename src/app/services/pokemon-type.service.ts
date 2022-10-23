@@ -53,4 +53,33 @@ export class PokemonTypeService {
 
      return this.POKEMON_TYPE_GROUND_NORMAL.color;
   }
+
+  getBackgroundColorByType(type: string): string {
+  
+    if(type === 'fire' || type === 'dragon' || type === 'fight') {
+      return this.POKEMON_TYPE_FIRE_FIGHT_DRAGON.color;
+    }
+
+    if(type === 'grass' || type === 'bug') {
+      return this.POKEMON_TYPE_GRASS_BUG.color;
+    }
+
+    if(type === 'water' || type === 'ice') {
+      return this.POKEMON_TYPE_WATER_ICE.color;
+    }
+
+    if(type === 'electric') {
+      return this.POKEMON_TYPE_ELETRIC.color;
+    }
+
+    if(type === 'rock') {
+      return this.POKEMON_TYPE_ROCK.color;
+    }
+
+    if(type === 'poison' || type === 'pyschic' || type === 'fairy' || type === 'ghost') {
+      return this.POKEMON_TYPE_POISON_PSYCHIC_FAIRY_GHOST.color;
+    }
+
+    return this.POKEMON_TYPE_GROUND_NORMAL.color;
+  }
 }

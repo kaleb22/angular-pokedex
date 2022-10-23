@@ -54,5 +54,6 @@ export class PokemonDetailsComponent implements OnInit {
     .catch( error => console.error(error));
     
     this.requestFinished = true;
+    console.log('pokemon info => ', this.pokemonDetails);
   }
 }

@@ -36,6 +36,14 @@
     height: inherit;
     background: white;
     border-radius: 4%;
-    margin: 5px
+    margin: 5px;
+    
+    &__badge {
+      display: flex;
+      justify-content: space-around;
+      margin-top: 40px;
+    }
   }
+
+
 }

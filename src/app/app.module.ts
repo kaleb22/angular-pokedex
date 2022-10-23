@@ -10,6 +10,7 @@ import { FullEntryNumberPipe } from './pipes/full-entry-number.pipe';
 import { PokemonDetailsComponent } from './components/pokemon-details/pokemon-details.component';
 import { PokemonImgPipe } from './pipes/pokemon-img.pipe';
 import { PokemonImgPngPipe } from './pipes/pokemon-img-png.pipe';
+import { BadgeTypeComponent } from './components/badge-type/badge-type.component';
 
 @NgModule({
   declarations: [
@@ -20,7 +21,8 @@ import { PokemonImgPngPipe } from './pipes/pokemon-img-png.pipe';
     FullEntryNumberPipe,
     PokemonDetailsComponent,
     PokemonImgPipe,
-    PokemonImgPngPipe
+    PokemonImgPngPipe,
+    BadgeTypeComponent
   ],
   imports: [
     BrowserModule,
