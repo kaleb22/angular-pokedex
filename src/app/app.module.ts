@@ -9,6 +9,7 @@ import { PokemonCardComponent } from './components/pokemon-card/pokemon-card.com
 import { FullEntryNumberPipe } from './pipes/full-entry-number.pipe';
 import { PokemonDetailsComponent } from './components/pokemon-details/pokemon-details.component';
 import { PokemonImgPipe } from './pipes/pokemon-img.pipe';
+import { PokemonImgPngPipe } from './pipes/pokemon-img-png.pipe';
 
 @NgModule({
   declarations: [
@@ -18,7 +19,8 @@ import { PokemonImgPipe } from './pipes/pokemon-img.pipe';
     PokemonCardComponent,
     FullEntryNumberPipe,
     PokemonDetailsComponent,
-    PokemonImgPipe
+    PokemonImgPipe,
+    PokemonImgPngPipe
   ],
   imports: [
     BrowserModule,
