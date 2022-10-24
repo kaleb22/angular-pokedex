@@ -53,6 +53,24 @@ export class PokemonDetailsComponent implements OnInit {
     .then( response => this.pokemonDetails.description = response.flavor_text_entries[0].flavor_text)
     .catch( error => console.error(error));
     
+    this.pokemonDetails.stats = this.pokemonDetails.stats.map( (stat, index) => {
+      if( index === 1) {
+        stat.stat.name = 'atk';
+      }
+      if(index === 2) {
+        stat.stat.name = 'def';
+      }
+      if(index === 3) {
+        stat.stat.name = 'satk';
+      }
+      if(index === 4) {
+        stat.stat.name = 'sdef';
+      }
+      if(index === 5) {
+        stat.stat.name = 'spd';
+      }
+      return stat;
+    })
     this.requestFinished = true;
     console.log('pokemon info => ', this.pokemonDetails);
   }
