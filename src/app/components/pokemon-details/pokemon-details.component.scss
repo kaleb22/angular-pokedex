@@ -37,13 +37,55 @@
     background: white;
     border-radius: 4%;
     margin: 5px;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
     
     &__badge {
+      width: 100%;
       display: flex;
       justify-content: space-around;
-      margin-top: 40px;
+      margin-top: 50px;
+    }
+
+    &__about {
+      width: 90%;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      font-size: 16px;
+
+      &__infos {
+        display: flex;
+        width: 100%;
+        justify-content: space-around;
+        margin-top: 15px;
+      }
+
+      &_bar {
+        width: 2px;
+        height: 76px;
+        background: #E0E0E0;
+      }
     }
   }
+}
 
+.infos {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 90px;
 
+  &__title {
+    font-size: 10px;
+  }
+}
+
+.general {
+  display: flex;
+  align-items: center;
+  font-size: 12px;
+  width: 100%;
+  justify-content: space-evenly;
 }

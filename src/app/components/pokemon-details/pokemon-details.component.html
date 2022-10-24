@@ -12,5 +12,41 @@
         <app-badge-type [type]="obj.type.name"></app-badge-type>
       </div>
     </div>
+    <div class="pokemon-details__stats__about">
+      <div class="pokemon-details__stats__about__infos">
+        <div class="infos">
+          <div class="general">
+            <span class="material-symbols-outlined">
+              weight
+            </span>
+            <p>{{ pokemonDetails.weigth | weight }}</p>
+          </div>
+          <p class="infos__title">Weigth</p>
+        </div>
+        <div class="pokemon-details__stats__about_bar"></div>
+        <div class="infos">
+          <div class="general">
+            <span class="material-symbols-outlined">
+              height
+            </span>
+            <p>{{ pokemonDetails.height | height }}</p>
+          </div>
+          <p class="infos__title">Height</p>
+        </div>
+        <div class="pokemon-details__stats__about_bar"></div>
+        <div class="infos">
+          <div>
+            <ng-container *ngFor="let move of pokemonDetails.abilities">
+              <p style="font-size: 13px; line-height: 0px;">{{move.ability.name}}</p>
+            </ng-container>
+          </div>
+          <p class="infos__title">Moves</p>
+        </div>
+      </div>
+      <strong>
+        <p [ngStyle]="{'color': bgColor}">About</p>
+      </strong>
+      <p style="font-size: 14px;">{{ pokemonDetails.description | lowercase }}</p>
+    </div>
   </div>
 </div>
