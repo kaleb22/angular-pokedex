@@ -13,6 +13,7 @@ import { PokemonImgPngPipe } from './pipes/pokemon-img-png.pipe';
 import { BadgeTypeComponent } from './components/badge-type/badge-type.component';
 import { WeightPipe } from './pipes/weight.pipe';
 import { HeightPipe } from './pipes/height.pipe';
+import { StatComponent } from './components/stat/stat.component';
 
 @NgModule({
   declarations: [
@@ -26,7 +27,8 @@ import { HeightPipe } from './pipes/height.pipe';
     PokemonImgPngPipe,
     BadgeTypeComponent,
     WeightPipe,
-    HeightPipe
+    HeightPipe,
+    StatComponent
   ],
   imports: [
     BrowserModule,

@@ -1,0 +1,40 @@
+:root {
+  --width: 0;
+}
+
+.stat {
+  display: flex;
+  width: 280px;
+  align-items: center;
+  justify-content: space-between;
+  line-height: 0;
+
+  p {
+    font-size: 12px;
+  }
+
+  &__divider {
+    width: 2px;
+    height: 10px;
+    background: #E0E0E0;
+  }
+
+  &__bar {
+    width: 230px;
+    height: 4px;
+    border-radius: 4px;
+    background: #E0E0E0;
+  }
+}
+
+.progress {
+  animation: progressBar 2s ease-in-out;
+  transition: width 2s ease;
+  height: 100%;
+  width: var(--width);
+}
+
+@keyframes progressBar {
+  0% { width: 0; }
+  100% { width: var(--width); }
+}

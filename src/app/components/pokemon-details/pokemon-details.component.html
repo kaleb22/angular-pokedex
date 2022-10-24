@@ -48,5 +48,16 @@
       </strong>
       <p style="font-size: 14px;">{{ pokemonDetails.description | lowercase }}</p>
     </div>
+
+    <strong>
+      <p [ngStyle]="{'color': bgColor}">Base Stats</p>
+    </strong>
+
+    <ng-container *ngFor="let stat of pokemonDetails.stats">
+      <app-stat 
+        [stats]="stat"
+        [bgColor]="bgColor"
+      ></app-stat>
+    </ng-container>
   </div>
 </div>
