@@ -2,7 +2,18 @@
   width: 100%;
   height: 100vh;
   display: flex;
-  flex-direction: column;
+  justify-content: center;
+  background: #000025;
+
+  &__container {
+    width: 600px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background: rgb(100, 147, 235);
+    height: inherit;
+  }
 
   &__header {
     display: flex;
@@ -18,7 +29,7 @@
     background-repeat: no-repeat;
     background-position: right;
     width: 97%;
-    height: 370px;
+    height: 425px;
   }
 
   &__img {
@@ -27,7 +38,7 @@
     display: flex;
     justify-content: center;
     align-items: flex-end;
-    height: 300px;
+    height: 210px;
   }
 
   &__stats {
@@ -66,6 +77,17 @@
         background: #E0E0E0;
       }
     }
+  }
+}
+
+@media only screen and (min-width: 600px) {
+  .pokemon-details__img {
+    width: 605px;
+    height: 230px;
+  }
+
+  .pokemon-details__container {
+    border-radius: 10px;
   }
 }
 

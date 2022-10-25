@@ -3,70 +3,72 @@
 </div>
 
 <ng-template #pokeList>
-  <div  class="pokemon-details" [ngStyle]="{'background': bgColor}">
+  <div  class="pokemon-details">
+    <div class="pokemon-details__container">
 
-    <div class="pokemon-details__bg-img">
-      <div class="pokemon-details__header">
-        <p style="font-size: 24px; font-weight: 800;">{{ name }}</p>
-        <p>{{ entryNumber | fullEntryNumber }}</p>
-      </div>
-    </div>
-    <div class="pokemon-details__img">
-      <img src="{{ entryNumber | pokemonImgPng }}" width="190" height="190">
-    </div>
-    <div class="pokemon-details__stats">
-      <div class="pokemon-details__stats__badge">
-        <div *ngFor="let obj of pokemonDetails.types" >
-          <app-badge-type [type]="obj.type.name"></app-badge-type>
+      <div class="pokemon-details__bg-img">
+        <div class="pokemon-details__header">
+          <p style="font-size: 24px; font-weight: 800;">{{ name }}</p>
+          <p>{{ entryNumber | fullEntryNumber }}</p>
+        </div>
+        <div class="pokemon-details__img">
+          <img src="{{ entryNumber | pokemonImgPng }}" width="190" height="190">
         </div>
       </div>
-      <div class="pokemon-details__stats__about">
-        <div class="pokemon-details__stats__about__infos">
-          <div class="infos">
-            <div class="general">
-              <span class="material-symbols-outlined">
-                weight
-              </span>
-              <p>{{ pokemonDetails.weigth | weight }}</p>
-            </div>
-            <p class="infos__title">Weigth</p>
-          </div>
-          <div class="pokemon-details__stats__about_bar"></div>
-          <div class="infos">
-            <div class="general">
-              <span class="material-symbols-outlined">
-                height
-              </span>
-              <p>{{ pokemonDetails.height | height }}</p>
-            </div>
-            <p class="infos__title">Height</p>
-          </div>
-          <div class="pokemon-details__stats__about_bar"></div>
-          <div class="infos">
-            <div>
-              <ng-container *ngFor="let move of pokemonDetails.abilities">
-                <p style="font-size: 13px; line-height: 0px;">{{move.ability.name}}</p>
-              </ng-container>
-            </div>
-            <p class="infos__title">Moves</p>
+      <div class="pokemon-details__stats">
+        <div class="pokemon-details__stats__badge">
+          <div *ngFor="let obj of pokemonDetails.types" >
+            <app-badge-type [type]="obj.type.name"></app-badge-type>
           </div>
         </div>
+        <div class="pokemon-details__stats__about">
+          <div class="pokemon-details__stats__about__infos">
+            <div class="infos">
+              <div class="general">
+                <span class="material-symbols-outlined">
+                  weight
+                </span>
+                <p>{{ pokemonDetails.weigth | weight }}</p>
+              </div>
+              <p class="infos__title">Weigth</p>
+            </div>
+            <div class="pokemon-details__stats__about_bar"></div>
+            <div class="infos">
+              <div class="general">
+                <span class="material-symbols-outlined">
+                  height
+                </span>
+                <p>{{ pokemonDetails.height | height }}</p>
+              </div>
+              <p class="infos__title">Height</p>
+            </div>
+            <div class="pokemon-details__stats__about_bar"></div>
+            <div class="infos">
+              <div>
+                <ng-container *ngFor="let move of pokemonDetails.abilities">
+                  <p style="font-size: 13px; line-height: 0px;">{{move.ability.name}}</p>
+                </ng-container>
+              </div>
+              <p class="infos__title">Moves</p>
+            </div>
+          </div>
+          <strong>
+            <p [ngStyle]="{'color': bgColor}">About</p>
+          </strong>
+          <p style="font-size: 14px;">{{ pokemonDetails.description | lowercase }}</p>
+        </div>
+    
         <strong>
-          <p [ngStyle]="{'color': bgColor}">About</p>
+          <p [ngStyle]="{'color': bgColor}">Base Stats</p>
         </strong>
-        <p style="font-size: 14px;">{{ pokemonDetails.description | lowercase }}</p>
+    
+        <ng-container *ngFor="let stat of pokemonDetails.stats">
+          <app-stat 
+            [stats]="stat"
+            [bgColor]="bgColor"
+          ></app-stat>
+        </ng-container>
       </div>
-  
-      <strong>
-        <p [ngStyle]="{'color': bgColor}">Base Stats</p>
-      </strong>
-  
-      <ng-container *ngFor="let stat of pokemonDetails.stats">
-        <app-stat 
-          [stats]="stat"
-          [bgColor]="bgColor"
-        ></app-stat>
-      </ng-container>
     </div>
   </div>
 </ng-template>
