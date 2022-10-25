@@ -14,6 +14,7 @@ export class PokemonListComponent implements OnInit {
   pokemonList: PokemonEntry[];
   showMorePokemon = false;
   pokemonListToShow = 10;
+  requestInit = true;
 
   ngOnInit(): void {
     this.requestPokemonList();
@@ -32,6 +33,7 @@ export class PokemonListComponent implements OnInit {
         .catch(error => console.error(error));
 
     this.pokemonList = pokeResponse as PokemonEntry[];
+    this.requestInit = false;
   }
 
   loadMorePokemon() {

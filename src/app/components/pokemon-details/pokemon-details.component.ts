@@ -20,7 +20,7 @@ export class PokemonDetailsComponent implements OnInit {
   name: string;
   bgColor: string;
   pokemonDetails = new PokemonDetailsModel();
-  requestFinished = false;
+  requestInit = true;
 
   ngOnInit(): void {
     this.activatedRouter.queryParams.subscribe( param => {
@@ -76,7 +76,7 @@ export class PokemonDetailsComponent implements OnInit {
       }
       return stat;
     })
-    this.requestFinished = true;
+    this.requestInit = false;
     console.log('pokemon info => ', this.pokemonDetails);
   }
 }
