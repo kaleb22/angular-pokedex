@@ -14,6 +14,7 @@ import { BadgeTypeComponent } from './components/badge-type/badge-type.component
 import { WeightPipe } from './pipes/weight.pipe';
 import { HeightPipe } from './pipes/height.pipe';
 import { StatComponent } from './components/stat/stat.component';
+import { FormatStatPipe } from './pipes/format-stat.pipe';
 
 @NgModule({
   declarations: [
@@ -28,7 +29,8 @@ import { StatComponent } from './components/stat/stat.component';
     BadgeTypeComponent,
     WeightPipe,
     HeightPipe,
-    StatComponent
+    StatComponent,
+    FormatStatPipe
   ],
   imports: [
     BrowserModule,
