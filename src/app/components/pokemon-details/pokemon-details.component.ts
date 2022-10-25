@@ -20,7 +20,7 @@ export class PokemonDetailsComponent implements OnInit {
   name: string;
   bgColor: string;
   pokemonDetails = new PokemonDetailsModel();
-  requestFinished = false;
+  requestInit = true;
 
   ngOnInit(): void {
     this.activatedRouter.queryParams.subscribe( param => {
@@ -50,7 +50,12 @@ export class PokemonDetailsComponent implements OnInit {
     .catch( error => console.error(error));
 
     await apiPokemonClient.getPokemonSpeciesById(entryNumber)
-    .then( response => this.pokemonDetails.description = response.flavor_text_entries[0].flavor_text)
+    .then( response => {
+      let flavorText = response.flavor_text_entries.find( 
+        elementDescription => elementDescription.language.name === 'en'
+      )
+      this.pokemonDetails.description = (flavorText?.flavor_text as string);
+    })
     .catch( error => console.error(error));
     
     this.pokemonDetails.stats = this.pokemonDetails.stats.map( (stat, index) => {
@@ -71,7 +76,7 @@ export class PokemonDetailsComponent implements OnInit {
       }
       return stat;
     })
-    this.requestFinished = true;
+    this.requestInit = false;
     console.log('pokemon info => ', this.pokemonDetails);
   }
 }

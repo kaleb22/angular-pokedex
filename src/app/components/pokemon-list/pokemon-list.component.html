@@ -1,4 +1,8 @@
-<div *ngIf="pokemonList">
+<div *ngIf="requestInit; else pokeList" class="loading">
+  <app-loading></app-loading>
+</div>
+
+<ng-template #pokeList>
   <div class="poke-list">
     <div *ngFor="let pokemon of pokemonList; let i = index">
       <div *ngIf="i < pokemonListToShow || showMorePokemon">
@@ -12,4 +16,4 @@
   <div class="container" *ngIf="pokemonListToShow <= pokemonList.length">
     <button (click)="loadMorePokemon()" class="container__btn ripple"> Show More </button>
   </div>
-</div>
+</ng-template>

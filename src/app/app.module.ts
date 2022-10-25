@@ -15,6 +15,7 @@ import { WeightPipe } from './pipes/weight.pipe';
 import { HeightPipe } from './pipes/height.pipe';
 import { StatComponent } from './components/stat/stat.component';
 import { FormatStatPipe } from './pipes/format-stat.pipe';
+import { LoadingComponent } from './components/loading/loading.component';
 
 @NgModule({
   declarations: [
@@ -30,7 +31,8 @@ import { FormatStatPipe } from './pipes/format-stat.pipe';
     WeightPipe,
     HeightPipe,
     StatComponent,
-    FormatStatPipe
+    FormatStatPipe,
+    LoadingComponent
   ],
   imports: [
     BrowserModule,
