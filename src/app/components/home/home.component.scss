@@ -38,6 +38,12 @@
   }
 }
 
+@media only screen and (min-width: 600px) {
+  .pokedex__logo {
+    margin-top: 5%;
+  }
+} 
+
 .pokeball {
 
   position: relative;
