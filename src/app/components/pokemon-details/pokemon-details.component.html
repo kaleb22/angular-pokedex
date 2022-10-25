@@ -1,7 +1,9 @@
 <div *ngIf="requestFinished" class="pokemon-details" [ngStyle]="{'background': bgColor}">
   <div class="pokemon-details__bg-img">
-    <p style="font-weight: 800;">{{ name }}</p>
-    <p>{{ entryNumber | fullEntryNumber }}</p>
+    <div class="pokemon-details__header">
+      <p style="font-size: 24px; font-weight: 800;">{{ name }}</p>
+      <p>{{ entryNumber | fullEntryNumber }}</p>
+    </div>
   </div>
   <div class="pokemon-details__img">
     <img src="{{ entryNumber | pokemonImgPng }}" width="190" height="190">
