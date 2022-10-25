@@ -7,6 +7,14 @@ import { PokemonListComponent } from './components/pokemon-list/pokemon-list.com
 import { HomeComponent } from './components/home/home.component';
 import { PokemonCardComponent } from './components/pokemon-card/pokemon-card.component';
 import { FullEntryNumberPipe } from './pipes/full-entry-number.pipe';
+import { PokemonDetailsComponent } from './components/pokemon-details/pokemon-details.component';
+import { PokemonImgPipe } from './pipes/pokemon-img.pipe';
+import { PokemonImgPngPipe } from './pipes/pokemon-img-png.pipe';
+import { BadgeTypeComponent } from './components/badge-type/badge-type.component';
+import { WeightPipe } from './pipes/weight.pipe';
+import { HeightPipe } from './pipes/height.pipe';
+import { StatComponent } from './components/stat/stat.component';
+import { FormatStatPipe } from './pipes/format-stat.pipe';
 
 @NgModule({
   declarations: [
@@ -14,7 +22,15 @@ import { FullEntryNumberPipe } from './pipes/full-entry-number.pipe';
     PokemonListComponent,
     HomeComponent,
     PokemonCardComponent,
-    FullEntryNumberPipe
+    FullEntryNumberPipe,
+    PokemonDetailsComponent,
+    PokemonImgPipe,
+    PokemonImgPngPipe,
+    BadgeTypeComponent,
+    WeightPipe,
+    HeightPipe,
+    StatComponent,
+    FormatStatPipe
   ],
   imports: [
     BrowserModule,

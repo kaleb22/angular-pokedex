@@ -1,0 +1,8 @@
+<div class="stat">
+    <p class="stat__name" [ngStyle]="{'color': bgColor, 'font-weight': 800}">{{stats.stat.name | uppercase }}</p>
+  <div class="stat__divider"></div>
+  <p class="stat__name">{{ stats.base_stat | formatStat }}</p>
+  <div class="stat__bar">
+    <div class="progress" [ngStyle]="{'background': bgColor}"></div>
+  </div>
+</div>

@@ -1,4 +1,5 @@
 import { Component, Input, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 import { PokemonTypeService } from 'src/app/services/pokemon-type.service';
 
 @Component({
@@ -8,7 +9,11 @@ import { PokemonTypeService } from 'src/app/services/pokemon-type.service';
 })
 export class PokemonCardComponent implements OnInit {
 
-  constructor(private pokemonTypeService: PokemonTypeService) { }
+  constructor(
+    private pokemonTypeService: PokemonTypeService,
+    private router: Router
+
+  ) { }
 
   @Input() entryNumber: number;
   @Input() name: string;
@@ -19,12 +24,16 @@ export class PokemonCardComponent implements OnInit {
     this.bgGColor = this.pokemonTypeService.getBackgroundColorByIndex(this.entryNumber);
   }
 
-  getPokemonImage(): string {
-    return `https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/dream-world/${this.entryNumber}.svg`
-  }
-
   goToPokemonDetails() {
-    console.log('cliquei');
+    this.router.navigate(
+      ['/pokemonDetails'],
+      {
+        queryParams: {
+          entryNumber: this.entryNumber,
+          name: this.name
+        }
+      }
+    );
   }
 
 }

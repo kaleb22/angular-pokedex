@@ -5,7 +5,7 @@
       <p>{{ entryNumber | fullEntryNumber }}</p>
     </div>
     <div class="poke-card__img">
-      <img [src]="getPokemonImage()" width="130" height="130">
+      <img src="{{ entryNumber | pokemonImg }}">
     </div>
   </div>
 </div>
