@@ -41,7 +41,6 @@
   }
 
   &__stats {
-    //height: inherit;
     background: white;
     border-radius: 4%;
     margin: 5px;
@@ -97,6 +96,11 @@
     height: 230px;
   }
 
+  .pokemon-details__img > img {
+    width: 170px;
+    height: 170px;
+  }
+
   .pokemon-details__container {
     border-radius: 10px;
   }
@@ -118,6 +122,11 @@
   .pokemon-details__img {
     width: 605px;
     height: 180px;
+  }
+
+  .pokemon-details__img > img {
+    width: 170px;
+    height: 170px;
   }
 
   .pokemon-details__container {
