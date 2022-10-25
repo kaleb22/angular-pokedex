@@ -80,7 +80,7 @@
   }
 }
 
-@media only screen and (min-width: 600px) {
+@media only screen and (min-width: 600px) and (min-height: 800px) {
   .pokemon-details__img {
     width: 605px;
     height: 230px;
@@ -88,6 +88,13 @@
 
   .pokemon-details__container {
     border-radius: 10px;
+  }
+}
+
+@media only screen and (min-width: 600px) and (max-height: 799px) {
+  .pokemon-details__img {
+    width: 605px;
+    height: 180px;
   }
 }
 
