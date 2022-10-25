@@ -14,14 +14,15 @@ export class PokemonTypeService {
   POKEMON_TYPE_BUG = { index: 4, color: '#A7B723', type: 'bug' };
   POKEMON_TYPE_WATER = { index: 5, color: '#6493EB', type: 'water' };
   POKEMON_TYPE_ICE = { index: 6, color: '#9AD6DF', type: 'ice' };
-  POKEMON_TYPE_ELETRIC = { index: 7, color: '#F9CF30', type: 'eletric' };
+  POKEMON_TYPE_ELETRIC = { index: 7, color: '#F9CF30', type: 'electric' };
   POKEMON_TYPE_ROCK = { index: 8, color: '#B69E31', type: 'rock' };
   POKEMON_TYPE_POISON = { index: 9, color: '#A43E9E', type: 'poison' };
   POKEMON_TYPE_PSYCHIC = { index: 10, color: '#FB5584', type: 'psychic' };
   POKEMON_TYPE_FAIRY = { index: 11, color: '#E69EAC', type: 'fairy' };
   POKEMON_TYPE_GHOST = { index: 12, color: '#70559B', type: 'ghost' };
   POKEMON_TYPE_GROUND = { index: 13, color: '#DEC16B', type: 'ground' };
-  POKEMON_TYPE_NORMAL = { index: 14, color: '#AAA67F', type: 'normal' };
+  POKEMON_TYPE_FLYING = { index: 14, color: '#A891EC', type: 'flying' };
+  POKEMON_TYPE_NORMAL = { index: 15, color: '#AAA67F', type: 'normal' };
 
   listPokemonTypesByIndex = [
     [4, 5, 6, 37, 38, 58, 59, 77, 78, 126, 136, 146],
@@ -133,6 +134,8 @@ export class PokemonTypeService {
         return this.POKEMON_TYPE_PSYCHIC.color;
       case this.POKEMON_TYPE_GROUND.type:
         return this.POKEMON_TYPE_GROUND.color;
+      case this.POKEMON_TYPE_FLYING.type:
+        return this.POKEMON_TYPE_FLYING.color;
       default:
         return this.POKEMON_TYPE_NORMAL.color;
     }
