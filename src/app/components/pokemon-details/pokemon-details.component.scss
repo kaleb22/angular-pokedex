@@ -37,7 +37,12 @@
     display: flex;
     justify-content: center;
     align-items: flex-end;
-    height: 210px;
+    top: 20%;
+
+    > img {
+      width: 170px;
+      height: 170px;
+    }
   }
 
   &__stats {
@@ -94,6 +99,7 @@
   .pokemon-details__img {
     width: 605px;
     height: 230px;
+    top: 12%;
   }
 
   .pokemon-details__img > img {
@@ -122,11 +128,12 @@
   .pokemon-details__img {
     width: 605px;
     height: 180px;
+    top: 12%;
   }
 
   .pokemon-details__img > img {
-    width: 170px;
-    height: 170px;
+    width: 200px;
+    height: 200px;
   }
 
   .pokemon-details__container {
