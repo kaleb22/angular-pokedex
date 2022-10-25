@@ -1,12 +1,15 @@
 .poke-list {
   display: flex;
   flex-wrap: wrap;
+  background: #E0E0E0;
 }
 
 .container {
   display: flex;
   justify-content: center;
-  height: 100px;
+  height: calc(100vh - 670px); // 100% da viewport - 670px height pokelist
+  padding-top: 20px;
+  background: #E0E0E0;
 
   &__btn {
     width: 100px;

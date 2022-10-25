@@ -13,7 +13,7 @@ export class PokemonListComponent implements OnInit {
   POKEMON_KANTO_ID = 2;
   pokemonList: PokemonEntry[];
   showMorePokemon = false;
-  pokemonListToShow = 5
+  pokemonListToShow = 10;
 
   ngOnInit(): void {
     this.requestPokemonList();
@@ -35,6 +35,6 @@ export class PokemonListComponent implements OnInit {
   }
 
   loadMorePokemon() {
-    this.pokemonListToShow = this.pokemonListToShow + 5;
+    this.pokemonListToShow = this.pokemonListToShow + 10;
   }
 }
