@@ -46,4 +46,24 @@
   transition: background 0s;
   opacity: 0.9;
 }
+
+@media only screen and (min-width: 600px) {
+  .poke-card {
+    width: 320px;
+    height: 250px;
+  }
+
+  .poke-card__bg-img {
+    background-size: 200px 200px;
+  }
+
+  .poke-card__img > img {
+    width: 120px;
+    height: 120px;
+  }
+
+  .poke-card__header {
+    font-size: 20px;
+  }
+}
   
