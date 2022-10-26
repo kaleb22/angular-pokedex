@@ -26,8 +26,6 @@ export class PokemonListComponent implements OnInit {
     } else {
       this.pokemonListToShow = 10;
     }
-
-    console.log(this.pokemonListToShow);
   }
 
   async requestPokemonList() {
