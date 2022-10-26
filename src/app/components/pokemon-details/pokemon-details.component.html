@@ -12,7 +12,14 @@
           <p>{{ entryNumber | fullEntryNumber }}</p>
         </div>
         <div class="pokemon-details__img">
+          <span *ngIf="entryNumber > 1" class="material-symbols-outlined" (click)="searchLastPokemonByIndex()">
+            arrow_back_ios
+          </span>
+          <span *ngIf="entryNumber === 1"></span>
           <img src="{{ entryNumber | pokemonImgPng }}">
+          <span class="material-symbols-outlined" (click)="getNextPokemonByIndex()">
+            arrow_forward_ios
+          </span>
         </div>
       </div>
       <div class="pokemon-details__stats">

@@ -30,7 +30,6 @@ export class PokemonCardComponent implements OnInit {
       {
         queryParams: {
           entryNumber: this.entryNumber,
-          name: this.name
         }
       }
     );
