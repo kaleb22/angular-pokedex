@@ -27,8 +27,6 @@ export class PokemonDetailsComponent implements OnInit {
   ngOnInit(): void {
     this.activatedRouter.queryParams.subscribe( param => {
       this.entryNumber = parseInt(param['entryNumber']);
-      
-      console.log(this.bgColor);
     });
 
     this.getPokemonInfosById(this.entryNumber);
@@ -81,7 +79,6 @@ export class PokemonDetailsComponent implements OnInit {
       return stat;
     })
     this.requestInit = false;
-    console.log('pokemon info => ', this.pokemonDetails);
   }
 
 
