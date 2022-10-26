@@ -16,6 +16,7 @@ export class PokemonListComponent implements OnInit {
   pokemonListToShow: number;
   requestInit = true;
   POKEMON_STORAGE_KEY: string = 'pokemonStorageKey'
+  pokemonName: string = '';
 
   ngOnInit(): void {
     this.requestPokemonList();

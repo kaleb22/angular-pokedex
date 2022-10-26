@@ -3,8 +3,12 @@
 </div>
 
 <ng-template #pokeList>
+  <div class="input__container">
+    <label for="pokemon-filter">Filter Pokemon by Name</label>
+    <input class="input" type="text" [(ngModel)]="pokemonName" id="pokemon-filter">
+  </div>
   <div class="poke-list">
-    <div *ngFor="let pokemon of pokemonList; let i = index">
+    <div *ngFor="let pokemon of pokemonList | filterPokemons : pokemonName; let i = index">
       <div *ngIf="i < pokemonListToShow || showMorePokemon">
         <app-pokemon-card
           [entryNumber]="pokemon.entry_number"
