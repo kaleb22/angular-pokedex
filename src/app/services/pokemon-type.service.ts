@@ -8,7 +8,7 @@ export class PokemonTypeService {
   constructor() { }
 
   POKEMON_TYPE_FIRE = { index: 0, color: '#F57D31', type: 'fire' };
-  POKEMON_TYPE_FIGHT = { index: 1, color: '#C12239', type: 'fight' };
+  POKEMON_TYPE_FIGHT = { index: 1, color: '#C12239', type: 'fighting' };
   POKEMON_TYPE_DRAGON = { index: 2, color: '#7037FF', type: 'dragon' };
   POKEMON_TYPE_GRASS = { index: 3, color: '#74CB48', type: 'grass' };
   POKEMON_TYPE_BUG = { index: 4, color: '#A7B723', type: 'bug' };

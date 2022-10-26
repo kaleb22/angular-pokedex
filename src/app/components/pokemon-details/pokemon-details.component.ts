@@ -21,12 +21,13 @@ export class PokemonDetailsComponent implements OnInit {
   bgColor: string;
   pokemonDetails = new PokemonDetailsModel();
   requestInit = true;
+  firstIndex: number = 1;
+  lastIndex: number = 151;
 
   ngOnInit(): void {
     this.activatedRouter.queryParams.subscribe( param => {
       this.entryNumber = parseInt(param['entryNumber']);
-      this.name = param['name'];
-      this.bgColor = this.pokemonTypeService.getBackgroundColorByIndex(this.entryNumber);
+      
       console.log(this.bgColor);
     });
 
@@ -34,7 +35,7 @@ export class PokemonDetailsComponent implements OnInit {
   }
 
   async getPokemonInfosById(entryNumber: number) {
-    
+    this.requestInit = true;
     const apiPokemonClient = new PokemonClient({
       cacheOptions: { maxAge: 500000, exclude: { query: false }}
     });
@@ -55,8 +56,11 @@ export class PokemonDetailsComponent implements OnInit {
         elementDescription => elementDescription.language.name === 'en'
       )
       this.pokemonDetails.description = (flavorText?.flavor_text as string);
+      this.name = response.name;
     })
     .catch( error => console.error(error));
+
+    this.bgColor = this.pokemonTypeService.getBackgroundColorByIndex(this.entryNumber);
     
     this.pokemonDetails.stats = this.pokemonDetails.stats.map( (stat, index) => {
       if( index === 1) {
@@ -78,5 +82,16 @@ export class PokemonDetailsComponent implements OnInit {
     })
     this.requestInit = false;
     console.log('pokemon info => ', this.pokemonDetails);
+  }
+
+
+  searchLastPokemonByIndex() {
+    this.entryNumber--;
+    this.getPokemonInfosById(this.entryNumber);
+  }
+
+  getNextPokemonByIndex() {
+    this.entryNumber++;
+    this.getPokemonInfosById(this.entryNumber);
   }
 }
