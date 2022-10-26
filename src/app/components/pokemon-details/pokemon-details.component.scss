@@ -37,7 +37,7 @@
     display: flex;
     justify-content: center;
     align-items: flex-end;
-    top: 17%;
+    top: 20%;
 
     > img {
       width: 170px;
@@ -80,6 +80,12 @@
         background: #E0E0E0;
       }
     }
+  }
+}
+
+@media only screen and (min-width: 360px) and (max-width: 735px) {
+  .pokemon-details__img {
+    top: 17%;
   }
 }
 
