@@ -21,6 +21,8 @@ export class PokemonDetailsComponent implements OnInit {
   bgColor: string;
   pokemonDetails = new PokemonDetailsModel();
   requestInit = true;
+  firstIndex: number = 1;
+  lastIndex: number = 151;
 
   ngOnInit(): void {
     this.activatedRouter.queryParams.subscribe( param => {
