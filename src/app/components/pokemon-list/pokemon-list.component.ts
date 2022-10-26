@@ -13,11 +13,20 @@ export class PokemonListComponent implements OnInit {
   POKEMON_KANTO_ID = 2;
   pokemonList: PokemonEntry[];
   showMorePokemon = false;
-  pokemonListToShow = 10;
+  pokemonListToShow: number;
   requestInit = true;
+  POKEMON_STORAGE_KEY: string = 'pokemonStorageKey'
 
   ngOnInit(): void {
     this.requestPokemonList();
+    
+    if(sessionStorage.getItem(this.POKEMON_STORAGE_KEY)) {
+      this.pokemonListToShow = parseInt(sessionStorage.getItem(this.POKEMON_STORAGE_KEY) as string);
+    } else {
+      this.pokemonListToShow = 10;
+    }
+
+    console.log(this.pokemonListToShow);
   }
 
   async requestPokemonList() {
@@ -38,5 +47,6 @@ export class PokemonListComponent implements OnInit {
 
   loadMorePokemon() {
     this.pokemonListToShow = this.pokemonListToShow + 10;
+    sessionStorage.setItem(this.POKEMON_STORAGE_KEY, this.pokemonListToShow.toString());
   }
 }
