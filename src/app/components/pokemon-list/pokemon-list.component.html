@@ -22,8 +22,10 @@
         ></app-pokemon-card>
       </div>
     </div>
-  </div>
-  <div class="container" *ngIf="pokemonListToShow <= pokemonList.length">
-    <button (click)="loadMorePokemon()" class="container__btn ripple"> Show More </button>
+    <div style="display: block; width: 100%;">
+      <div class="container" *ngIf="pokemonListToShow <= pokemonList.length">
+        <button (click)="loadMorePokemon()" class="container__btn ripple"> Show More </button>
+      </div>
+    </div>
   </div>
 </ng-template>
