@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
+import { FormsModule } from '@angular/forms';
 
 import { AppComponent } from './app.component';
 import { AppRoutingModule } from './app-routing.module';
@@ -16,6 +17,7 @@ import { HeightPipe } from './pipes/height.pipe';
 import { StatComponent } from './components/stat/stat.component';
 import { FormatStatPipe } from './pipes/format-stat.pipe';
 import { LoadingComponent } from './components/loading/loading.component';
+import { FilterPokemonsPipe } from './pipes/filter-pokemons.pipe';
 
 @NgModule({
   declarations: [
@@ -32,11 +34,13 @@ import { LoadingComponent } from './components/loading/loading.component';
     HeightPipe,
     StatComponent,
     FormatStatPipe,
-    LoadingComponent
+    LoadingComponent,
+    FilterPokemonsPipe
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

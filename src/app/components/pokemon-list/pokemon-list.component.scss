@@ -1,14 +1,59 @@
+:root {
+  --input-border: #8b8a8b;
+  --input-focus-h: 245;
+  --input-focus-s: 100%;
+  --input-focus-l: 42%;
+}
+
+.input__container {
+  display: flex;
+  background: #000025;
+  height: 90px;
+  justify-content: space-around;
+  align-items: center;
+  width: 100%;
+  flex-wrap: wrap;
+
+  > label {
+    color: white;
+    font-size: 12px;
+  }
+}
+
+.input {
+  font-size: 12px;
+  padding: 0.25em 0.5em;
+  background-color: #0000255e;
+  border: 2px solid #8b8a8b;
+  border-radius: 4px;
+  transition: 180ms box-shadow ease-in-out;
+  color: white
+}
+
+.input:not(textarea) {
+  line-height: 1;
+  height: 2.25rem;
+}
+
+.input:focus {
+  border-color: hsl(var(--input-focus-h), var(--input-focus-s), var(--input-focus-l));
+  box-shadow: 0 0 0 3px hsla(var(--input-focus-h), var(--input-focus-s), calc(var(--input-focus-l) +
+  40%), 0.8);
+}
+
 .poke-list {
   display: flex;
   flex-wrap: wrap;
   background: #000025;
   justify-content: center;
+  height: 100vh;
+  overflow: scroll;
+  scrollbar-width: none;
 }
 
 .container {
   display: flex;
   justify-content: center;
-  height: calc(100vh - 670px); // 100% da viewport - 670px height pokelist
   padding-top: 20px;
   background: #000025;
 
@@ -26,5 +71,13 @@
 @media only screen and (min-width: 600px) {
   .container {
     height: calc(100vh - 560px);
+  }
+
+  .input__container > label {
+    font-size: 16px;
+  }
+
+  .input__container {
+    justify-content: space-evenly;
   }
 } 

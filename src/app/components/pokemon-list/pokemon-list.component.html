@@ -3,8 +3,18 @@
 </div>
 
 <ng-template #pokeList>
+  <div class="input__container">
+    <label for="pokemon-filter">Filter Pokemon by Name</label>
+    <input 
+      class="input" 
+      type="text" 
+      [(ngModel)]="pokemonName" 
+      id="pokemon-filter"
+      oninput="this.value = this.value.toLowerCase()"
+    >
+  </div>
   <div class="poke-list">
-    <div *ngFor="let pokemon of pokemonList; let i = index">
+    <div *ngFor="let pokemon of pokemonList | filterPokemons : pokemonName; let i = index">
       <div *ngIf="i < pokemonListToShow || showMorePokemon">
         <app-pokemon-card
           [entryNumber]="pokemon.entry_number"
@@ -12,8 +22,10 @@
         ></app-pokemon-card>
       </div>
     </div>
-  </div>
-  <div class="container" *ngIf="pokemonListToShow <= pokemonList.length">
-    <button (click)="loadMorePokemon()" class="container__btn ripple"> Show More </button>
+    <div style="display: block; width: 100%;">
+      <div class="container" *ngIf="pokemonListToShow <= pokemonList.length">
+        <button (click)="loadMorePokemon()" class="container__btn ripple"> Show More </button>
+      </div>
+    </div>
   </div>
 </ng-template>
