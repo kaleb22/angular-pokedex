@@ -17,8 +17,13 @@ describe('WeightPipe', () => {
     expect(formatedWeight).toMatch('2,2 kg');
   });
 
+  it('should format weight between 10 kilo and 99', () => {
+    const formatedWeight = pipe.transform(220);
+    expect(formatedWeight).toMatch('22,0 kg');
+  });
+
   it('should format weight greater than 1000 kilo', () => {
     const formatedWeight = pipe.transform(1000);
-    expect(formatedWeight).toMatch('1 t');
+    expect(formatedWeight).toMatch('0.10 t');
   });
 });

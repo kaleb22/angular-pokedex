@@ -16,11 +16,12 @@ export class WeightPipe implements PipeTransform {
     }
 
     if( weight >= 100 && weight <= 999 ) {
-      return `${weight} kg`;
+      let numbers = weight.toString().split('');
+      return `${numbers[0]}${numbers[1]},${numbers[2]} kg`;
     }
 
     let numbers = weight.toString().split('');
-    return `${numbers[0]}.${numbers[0]} t`;
+    return `0.${numbers[0]}${numbers[1]} t`;
 
   }
 
