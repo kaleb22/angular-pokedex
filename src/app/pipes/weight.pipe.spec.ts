@@ -1,8 +1,24 @@
 import { WeightPipe } from './weight.pipe';
 
 describe('WeightPipe', () => {
+  const pipe = new WeightPipe();
+  
   it('create an instance', () => {
-    const pipe = new WeightPipe();
     expect(pipe).toBeTruthy();
+  });
+
+  it('should format weight less than 1 kilo', () => {
+    const formatedWeight = pipe.transform(7);
+    expect(formatedWeight).toMatch('0,7 kg');
+  });
+
+  it('should format weight between 1 kilo and 9,9', () => {
+    const formatedWeight = pipe.transform(22);
+    expect(formatedWeight).toMatch('2,2 kg');
+  });
+
+  it('should format weight greater than 1000 kilo', () => {
+    const formatedWeight = pipe.transform(1000);
+    expect(formatedWeight).toMatch('1 t');
   });
 });
