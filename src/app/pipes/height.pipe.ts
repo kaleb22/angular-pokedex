@@ -12,11 +12,12 @@ export class HeightPipe implements PipeTransform {
     }
 
     if( height >= 10 && height <= 99) {
-      let numbers = height.toString().split('');
+      const numbers = height.toString().split('');
       return `${numbers[0]},${numbers[1]} m`;
     }
 
-    return `${height} m`;
+    const numbers = height.toString().split('');
+    return `${numbers[0]}${numbers[1]},${numbers[2]} m`;
   }
 
 }
